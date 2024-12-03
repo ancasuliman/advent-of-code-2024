@@ -6,7 +6,12 @@ import kotlin.io.path.readText
 /**
  * Reads lines from the given input txt file.
  */
-fun readInput(name: String) = Path("src/$name.txt").readText().trim().lines()
+fun readInput(path: String): List<String> = Path(path).readText().trim().lines()
+
+/**
+ * Convert a line of the input to a list of integers .
+ */
+fun lineToIntegers(line: String): List<Int> = line.split("\\s+".toRegex()).map { it.toInt() }
 
 /**
  * Converts string to md5 hash.
